@@ -13,13 +13,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>downloading.com.br</title>
     <script>
+        function contae(){
         var counter = parseInt(localStorage.getItem("counter")) || 0;
         counter++;
         localStorage.setItem("counter", counter);
         document.getElementById("counter").innerHTML = counter;
+        }
     </script>
 </head>
-<body>
+<body onload="javascript:contae();">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D78PCV"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
