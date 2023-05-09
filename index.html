@@ -33,12 +33,13 @@
         window.addEventListener('user_engagement', function(event) {
           var metrics = event.detail.metrics[0];
           var visitors = metrics.values[0];
+            console.log(visitors);
           // Display the number of visitors on your website
           document.getElementById('visitors-count').textContent = visitors;
         });
     </script>
 </head>
-<body >
+<body>
 
     <p>Visitantes: <div id="visitors-count"></div></p>
 
