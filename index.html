@@ -13,20 +13,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>downloading.com.br</title>
     <script>
-        function contae(){
-        var counter = parseInt(localStorage.getItem("counter")) || 0;
-        counter++;
-        localStorage.setItem("counter", counter);
-        document.getElementById("counter").innerHTML = counter;
-        }
+        // Replace "GA_MEASUREMENT_ID" with your Google Analytics measurement ID
+        gtag('config', 'G-S014D75XC2');
+
+        // Get the number of visitors for the last 7 days
+        gtag('event', 'page_view', {
+          'date_range': '7days',
+          'metrics': 'ga:users'
+        });
+
+        // Listen for the "user_engagement" event, which fires when the metrics are available
+        window.addEventListener('user_engagement', function(event) {
+          var metrics = event.detail.metrics[0];
+          var visitors = metrics.values[0];
+          // Display the number of visitors on your website
+          document.getElementById('visitors-count').textContent = visitors;
+        });
     </script>
 </head>
-<body onload="javascript:contae();">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D78PCV"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <p>Visitantes: <span id="counter"></span></p>
+<body >
+
+    <p>Visitantes: <div id="visitors-count"></div></p>
 
 </body>
 </html>
