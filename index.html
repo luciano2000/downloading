@@ -11,6 +11,7 @@
     <style>
         body {
             font-family: 'Anton', sans-serif;
+            background-color: aliceblue;
         }
         #geral {
             display: flex;
@@ -21,6 +22,7 @@
             justify-content: center;
             font-size: 40px;
             text-align: center;
+            color: cornflowerblue;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -50,6 +52,14 @@
     </script>
 </head>
 <body>
-    <div id="geral">Em breve um site de confiança para downloads.</div>
+    <div id="geral"><p>Em breve um site de confiança para downloads.</p><form name="contact" netlify>
+  <p>
+    Avise-me: <label>e-mail <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <button type="submit">Enviar</button>
+  </p>
+</form></div>
+    
 </body>
 </html>
